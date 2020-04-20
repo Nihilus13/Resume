@@ -1,0 +1,30 @@
+<resources>
+    <string name="appName">Resume</string>
+
+    <!-- Sections-->
+    <string name="section_contact">Contact</string>
+    <string name="section_job">Job experience</string>
+    <string name="section_education">Education</string>
+    <string name="section_skills">Skills</string>
+
+    <string name="section_responsibilities">Responsibilities</string>
+
+    <!-- Education-->
+    <string name="education_bachelor">Bachelor</string>
+    <string name="education_master">Master</string>
+
+    <!-- Contact-->
+    <string name="contact_phone">Phone</string>
+    <string name="contact_mail">Mail</string>
+    <string name="contact_linkedin">LinkedIn</string>
+
+    <string name="contact_mail_subject">Subject</string>
+    <string name="contact_mail_title">Title</string>
+
+    <!--Loading-->
+    <string name="loading_about">Loading…</string>
+
+    <!-- Errors-->
+    <string name="error_default">Some Error</string>
+    <string name="error_no_activity">Could not find an activity to $s</string>
+</resources>

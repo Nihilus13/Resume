@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="onPhoneClicklistener"
+            type="com.nihilus13.ui.resume.adapter.onclick.OnDataBindViewClick" />
+
+        <variable
+            name="onMailClicklistener"
+            type="com.nihilus13.ui.resume.adapter.onclick.OnDataBindViewClick" />
+
+        <variable
+            name="onLinkedInClicklistener"
+            type="com.nihilus13.ui.resume.adapter.onclick.OnDataBindViewClick" />
+
+        <variable
+            name="contactResumeItem"
+            type="com.nihilus13.uimodels.ContactResumeItem" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:foreground="?android:attr/selectableItemBackground"
+        android:padding="@dimen/margin_medium">
+
+        <ImageView
+            android:id="@+id/imagePhone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:onClick="@{()->onPhoneClicklistener.onClick(contactResumeItem.contact.number)}"
+            android:src="@drawable/ic_call_white_24dp"
+            app:layout_constraintBottom_toBottomOf="@id/textPhoneNumberHintDescription"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/textPhoneNumber" />
+
+        <TextView
+            android:id="@+id/textPhoneNumber"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="@dimen/margin_small"
+            android:ellipsize="end"
+            android:gravity="start|center_vertical"
+            android:singleLine="true"
+            android:text="@{contactResumeItem.contact.number}"
+            android:textColor="@android:color/black"
+            android:textSize="@dimen/title_font"
+            android:textStyle="bold"
+            app:layout_constrainedWidth="true"
+            app:layout_constraintBottom_toTopOf="@+id/textPhoneNumberHintDescription"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/imagePhone"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="123-456-789" />
+
+        <TextView
+            android:id="@+id/textPhoneNumberHintDescription"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/margin_small"
+            android:ellipsize="end"
+            android:gravity="start|center_vertical"
+            android:singleLine="true"
+            android:text="@string/contact_phone"
+            android:textSize="@dimen/subtitle_font"
+            app:layout_constraintBottom_toTopOf="@id/textMail"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/imagePhone"
+            app:layout_constraintTop_toBottomOf="@+id/textPhoneNumber" />
+
+        <ImageView
+            android:id="@+id/imageMail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/margin_medium"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:onClick="@{()->onMailClicklistener.onClick(contactResumeItem.contact.mail)}"
+            android:src="@drawable/ic_email_black_24dp"
+            app:layout_constraintBottom_toBottomOf="@id/textMailHintDescription"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/textMail" />
+
+        <TextView
+            android:id="@+id/textMail"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="@dimen/margin_small"
+            android:layout_marginTop="@dimen/margin_medium"
+            android:ellipsize="end"
+            android:gravity="start|center_vertical"
+            android:singleLine="true"
+            android:text="@{contactResumeItem.contact.mail}"
+            android:textColor="@android:color/black"
+            android:textSize="@dimen/title_font"
+            android:textStyle="bold"
+            app:layout_constrainedWidth="true"
+            app:layout_constraintBottom_toTopOf="@+id/textMailHintDescription"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/imageMail"
+            app:layout_constraintTop_toBottomOf="@id/textPhoneNumberHintDescription"
+            tools:text="hamburger@hamburg.er" />
+
+        <TextView
+            android:id="@+id/textMailHintDescription"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/margin_small"
+            android:ellipsize="end"
+            android:gravity="start|center_vertical"
+            android:singleLine="true"
+            android:text="@string/contact_mail"
+            android:textSize="@dimen/subtitle_font"
+            app:layout_constraintBottom_toTopOf="@id/textLinkedIn"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/imageMail"
+            app:layout_constraintTop_toBottomOf="@+id/textMail" />
+
+        <ImageView
+            android:id="@+id/imageLinkedIn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/margin_medium"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:onClick="@{()->onLinkedInClicklistener.onClick(contactResumeItem.contact.linkedInUrl)}"
+            android:src="@drawable/ic_linkedin"
+            app:layout_constraintBottom_toBottomOf="@id/textLinkedInDescription"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/textLinkedIn" />
+
+        <TextView
+            android:id="@+id/textLinkedIn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="@dimen/margin_small"
+            android:layout_marginTop="@dimen/margin_medium"
+            android:ellipsize="end"
+            android:gravity="start|center_vertical"
+            android:singleLine="true"
+            android:text="@{contactResumeItem.contact.linkedInUrl}"
+            android:textColor="@android:color/black"
+            android:textSize="@dimen/title_font"
+            android:textStyle="bold"
+            app:layout_constrainedWidth="true"
+            app:layout_constraintBottom_toTopOf="@+id/textLinkedInDescription"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/imageLinkedIn"
+            app:layout_constraintTop_toBottomOf="@id/textMailHintDescription"
+            tools:text="linkedin.com/hamburger" />
+
+        <TextView
+            android:id="@+id/textLinkedInDescription"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/margin_small"
+            android:ellipsize="end"
+            android:gravity="start|center_vertical"
+            android:singleLine="true"
+            android:text="@string/contact_linkedin"
+            android:textSize="@dimen/subtitle_font"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/imageLinkedIn"
+            app:layout_constraintTop_toBottomOf="@+id/textLinkedIn" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

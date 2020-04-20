@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="viewState"
+            type="com.nihilus13.ui.resume.state.ViewState" />
+    </data>
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <include
+            android:id="@+id/layoutError"
+            layout="@layout/layout_error"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="@{viewState.hasError?View.VISIBLE:View.GONE}" />
+
+        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+            android:id="@+id/swipeRecyclerHome"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="@{viewState.hasError?View.GONE:View.VISIBLE}"
+            app:refreshing="@{viewState.loading}">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerResume"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:setResume="@{viewState.listResume}" />
+        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+</layout>

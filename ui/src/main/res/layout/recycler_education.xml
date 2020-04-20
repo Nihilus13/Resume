@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="educationResumeItem"
+            type="com.nihilus13.uimodels.EducationResumeItem" />
+
+        <variable
+            name="transformation"
+            type="com.nihilus13.imageloader.TransformationType" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:foreground="?android:attr/selectableItemBackground"
+        android:padding="@dimen/margin_medium">
+
+        <ImageView
+            android:id="@+id/imageEducation"
+            android:layout_width="@dimen/image_thumbnail"
+            android:layout_height="@dimen/image_thumbnail"
+            android:elevation="@dimen/elevation"
+            app:image="@{educationResumeItem.education.educationPlaceLogo}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:transformation="@{transformation}"
+            tools:src="@android:drawable/btn_plus" />
+
+        <TextView
+            android:id="@+id/textEducationName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="@dimen/margin_small"
+            android:layout_marginRight="@dimen/margin_small"
+            android:ellipsize="end"
+            android:gravity="start|center_vertical"
+            android:singleLine="true"
+            android:text="@{educationResumeItem.education.educationPlaceName}"
+            android:textColor="@android:color/black"
+            android:textSize="@dimen/title_font"
+            android:textStyle="bold"
+            app:layout_constrainedWidth="true"
+            app:layout_constraintBottom_toTopOf="@id/textEducationNameDescription"
+            app:layout_constraintEnd_toStartOf="@+id/textEducationLevel"
+            app:layout_constraintStart_toEndOf="@+id/imageEducation"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="AGH" />
+
+        <TextView
+            android:id="@+id/textEducationNameDescription"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/margin_small"
+            android:layout_marginRight="@dimen/margin_small"
+            android:ellipsize="end"
+            android:gravity="start|center_vertical"
+            android:singleLine="true"
+            android:text="@{educationResumeItem.education.major}"
+            android:textSize="@dimen/subtitle_font"
+            app:layout_constrainedWidth="true"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/textEducationLevel"
+            app:layout_constraintStart_toEndOf="@+id/imageEducation"
+            app:layout_constraintTop_toBottomOf="@id/textEducationName"
+            tools:text="Department" />
+
+        <TextView
+            android:id="@+id/textEducationPeriod"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:gravity="center"
+            android:singleLine="true"
+            android:text="@{educationResumeItem.formatPeriod()}"
+            android:textSize="@dimen/subtitle_font"
+            android:textStyle="bold"
+            app:layout_constrainedWidth="true"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textEducationLevel"
+            tools:text="2019 - 2020" />
+
+        <TextView
+            android:id="@+id/textEducationLevel"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:gravity="center"
+            android:singleLine="true"
+            android:text="@{educationResumeItem.education.achievedLevel}"
+            android:textSize="@dimen/subtitle_font"
+            android:textStyle="bold"
+            app:layout_constrainedWidth="true"
+            app:layout_constraintBottom_toTopOf="@+id/textEducationPeriod"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/textEducationPeriod"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Level" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

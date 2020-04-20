@@ -1,0 +1,128 @@
+{
+  "person": {
+    "imageUrl": "https://media-exp1.licdn.com/dms/image/C4E03AQE4-vDd_iE2pQ/profile-displayphoto-shrink_200_200/0?e\u003d1593043200\u0026v\u003dbeta\u0026t\u003dQrNJexkBDiYmJjqxYIgmGuInpyEJ-pccz2HAsUYqB64",
+    "fullName": "Tomasz Czerw"
+  },
+  "contact": {
+    "number": "123-456-789",
+    "mail": "my.mail@gmail.com",
+    "linkedInUrl": "https://www.linkedin.com/in/tomasz-czerw-494711a6/"
+  },
+  "listEducation": [
+    {
+      "period": {
+        "dateStart": "2012-04-23T10:16:36.964+0200",
+        "dateEnd": "2014-04-23T10:16:36.964+0200"
+      },
+      "educationPlaceLogo": "https://www.agh.edu.pl/typo3temp/_processed_/csm_znak_graficzny_agh_f2af8452d6.jpg",
+      "educationPlaceName": "The AGH University o Science and Technology",
+      "major": "Computer Science",
+      "achievedLevel": "Master"
+    },
+    {
+      "period": {
+        "dateStart": "2008-04-23T10:16:36.953+0200",
+        "dateEnd": "2012-04-23T10:16:36.964+0200"
+      },
+      "educationPlaceLogo": "https://www.agh.edu.pl/typo3temp/_processed_/csm_znak_graficzny_agh_f2af8452d6.jpg",
+      "educationPlaceName": "The AGH University o Science and Technology",
+      "major": "Computer Science",
+      "achievedLevel": "Bachelor"
+    }
+  ],
+  "listJobExperience": [
+    {
+      "period": {
+        "dateStart": "2019-10-23T10:16:36.997+0200"
+      },
+      "company": {
+        "name": "Codete",
+        "logoUrl": "https://cdn.bulldogjob.com/system/companies/logos/000/000/056/thumb/mRjy6xNt_400x400.jpg",
+        "url": "https://codete.com/"
+      },
+      "jobPosition": "Senior Android developer"
+    },
+    {
+      "period": {
+        "dateStart": "2016-08-23T10:16:36.997+0200",
+        "dateEnd": "2019-09-23T10:16:36.997+0200"
+      },
+      "company": {
+        "name": "Grand Parade part of WilliamHill",
+        "logoUrl": "https://crossweb.pl/job/wp-content/uploads/2016/08/Grand_Parade_logo_385x195.jpg",
+        "url": "https://grandparade.co.uk/"
+      },
+      "jobPosition": "Senior Android developer"
+    },
+    {
+      "period": {
+        "dateStart": "2013-03-23T10:16:36.997+0100",
+        "dateEnd": "2016-07-23T10:16:36.997+0200"
+      },
+      "company": {
+        "name": "Railwaymen",
+        "logoUrl": "https://railwaymen.org/assets/homepage/logo_rwm-4c832f3386bee4be6c74cf9a4413ce66.png",
+        "url": "https://railwaymen.org/"
+      },
+      "jobPosition": "Regular \u0026 Senior Android developer"
+    },
+    {
+      "period": {
+        "dateStart": "2013-01-23T10:16:36.997+0100",
+        "dateEnd": "2013-03-23T10:16:36.997+0100"
+      },
+      "company": {
+        "name": "ABB",
+        "logoUrl": "https://upload.wikimedia.org/wikipedia/commons/0/00/ABB_logo.svg",
+        "url": "https://new.abb.com/"
+      },
+      "jobPosition": "Intern developer"
+    },
+    {
+      "period": {
+        "dateStart": "2009-10-23T10:16:36.997+0200",
+        "dateEnd": "2012-08-23T10:16:36.997+0200"
+      },
+      "company": {
+        "name": "Techramps",
+        "logoUrl": "https://www.grupatechramps.com/i/cms/techramps-logo.png",
+        "url": "https://www.techramps.com/"
+      },
+      "jobPosition": "Skatepark designer"
+    }
+  ],
+  "listSkill": [
+    {
+      "name": "Kotlin",
+      "iconUrl": "https://kotlinlang.org/assets/images/open-graph/kotlin_250x250.png"
+    },
+    {
+      "name": "Java",
+      "iconUrl": "https://www.iprsam.com/wp-content/uploads/2018/12/Java-logo-tr.png"
+    },
+    {
+      "name": "Android",
+      "iconUrl": "https://upload.wikimedia.org/wikipedia/commons/3/3e/Android_logo_2019.png"
+    },
+    {
+      "name": "Git",
+      "iconUrl": "https://i1.wp.com/kosiorowski.net/wp-content/uploads/2014/01/git-logo-cc-by-300x300.png"
+    },
+    {
+      "name": "Multiple 3rd parties libs and systems integration",
+      "iconUrl": "https://seeklogo.com/images/F/firebase-logo-402F407EE0-seeklogo.com.png"
+    },
+    {
+      "name": "Working with Agile",
+      "iconUrl": "https://cdn1.iconfinder.com/data/icons/monocromatic-vol-1/128/scrum-512.png"
+    },
+    {
+      "name": "Sketchup",
+      "iconUrl": "https://b1.pngbarn.com/png/455/370/sketchup-icon-sketchup-icons-red-and-white-3d-png-clip-art.png"
+    },
+    {
+      "name": "And many many others",
+      "iconUrl": "https://workplaceinsight.net/wp-content/uploads/2017/04/Skills.png"
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="sectionResumeItem"
+            type="com.nihilus13.uimodels.SectionResumeItem" />
+
+    </data>
+
+    <TextView
+        android:id="@+id/sectionTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/white"
+        android:gravity="start|center_vertical"
+        android:maxLines="1"
+        android:padding="@dimen/margin_medium"
+        android:text="@{sectionResumeItem.titleResId}"
+        android:textAllCaps="true"
+        android:textColor="@android:color/black"
+        android:textSize="@dimen/title_font"
+        android:textStyle="bold"
+        tools:text="Section" />
+</layout>

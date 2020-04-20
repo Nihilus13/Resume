@@ -1,0 +1,8 @@
+rootProject.name='Resume'
+include ':ui'
+include ':data'
+include ':domain'
+include ':features:imageloader'
+include ':features:coroutines'
+include ':features:dateutils'
+include ':features:testhelper'

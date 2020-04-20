@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="elevation">2dp</dimen>
+
+    <dimen name="margin_medium">16dp</dimen>
+    <dimen name="margin_small">8dp</dimen>
+
+    <dimen name="image_thumbnail">36dp</dimen>
+    <dimen name="image_medium">70dp</dimen>
+
+    <!--Fonts-->
+    <dimen name="header_font">20sp</dimen>
+    <dimen name="title_font">16sp</dimen>
+    <dimen name="subtitle_font">13sp</dimen>
+</resources>

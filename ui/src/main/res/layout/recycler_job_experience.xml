@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="jobExperienceResumeItem"
+            type="com.nihilus13.uimodels.JobExperienceResumeItem" />
+
+        <variable
+            name="transformation"
+            type="com.nihilus13.imageloader.TransformationType" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:foreground="?android:attr/selectableItemBackground"
+        android:padding="@dimen/margin_medium">
+
+        <ImageView
+            android:id="@+id/imageJobCompany"
+            android:layout_width="@dimen/image_thumbnail"
+            android:layout_height="@dimen/image_thumbnail"
+            android:elevation="@dimen/elevation"
+            app:image="@{jobExperienceResumeItem.jobExperience.company.logoUrl}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:transformation="@{transformation}"
+            tools:src="@android:drawable/btn_plus" />
+
+        <TextView
+            android:id="@+id/textSkillName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="@dimen/margin_small"
+            android:layout_marginRight="@dimen/margin_small"
+            android:ellipsize="end"
+            android:gravity="start|center_vertical"
+            android:singleLine="true"
+            android:text="@{jobExperienceResumeItem.jobExperience.company.name}"
+            android:textColor="@android:color/black"
+            android:textSize="@dimen/title_font"
+            android:textStyle="bold"
+            app:layout_constrainedWidth="true"
+            app:layout_constraintBottom_toTopOf="@+id/textJobDescription"
+            app:layout_constraintEnd_toStartOf="@+id/textPeriod"
+            app:layout_constraintStart_toEndOf="@+id/imageJobCompany"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="HSBC" />
+
+        <TextView
+            android:id="@+id/textJobDescription"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/margin_small"
+            android:layout_marginRight="@dimen/margin_small"
+            android:ellipsize="end"
+            android:gravity="start|center_vertical"
+            android:singleLine="true"
+            android:text="@{jobExperienceResumeItem.jobExperience.jobPosition}"
+            android:textSize="@dimen/subtitle_font"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/textPeriod"
+            app:layout_constraintStart_toEndOf="@+id/imageJobCompany"
+            app:layout_constraintTop_toBottomOf="@id/textSkillName"
+            tools:text="Position" />
+
+        <TextView
+            android:id="@+id/textPeriod"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/margin_small"
+            android:layout_marginRight="@dimen/margin_small"
+            android:ellipsize="end"
+            android:gravity="start|center_vertical"
+            android:singleLine="true"
+            android:text="@{jobExperienceResumeItem.formatPeriod()}"
+            android:textSize="@dimen/subtitle_font"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="2019 - 2020" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">@color/lightGray</color>
+    <color name="colorPrimaryDark">@color/gray</color>
+    <color name="colorAccent">@color/lightGranate</color>
+
+    <color name="background">#EDF0F4</color>
+
+    <color name="red">#E53935</color>
+    <color name="green">#43A047</color>
+    <color name="blue">#1E88E5</color>
+
+    <color name="lightGray">#E9F0F4</color>
+    <color name="gray">#ABB0C1</color>
+    <color name="lightGranate">#3F4E6E</color>
+
+</resources>

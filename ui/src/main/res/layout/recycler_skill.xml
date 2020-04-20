@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="skillResumeItem"
+            type="com.nihilus13.uimodels.SkillResumeItem" />
+
+        <variable
+            name="transformation"
+            type="com.nihilus13.imageloader.TransformationType" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:foreground="?android:attr/selectableItemBackground"
+        android:padding="@dimen/margin_medium">
+
+        <ImageView
+            android:id="@+id/imageSkill"
+            android:layout_width="@dimen/image_thumbnail"
+            android:layout_height="@dimen/image_thumbnail"
+            android:elevation="@dimen/elevation"
+            app:image="@{skillResumeItem.skill.iconUrl}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:transformation="@{transformation}"
+            tools:src="@android:drawable/alert_dark_frame" />
+
+        <TextView
+            android:id="@+id/textSkillName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="@dimen/margin_small"
+            android:layout_marginRight="@dimen/margin_small"
+            android:ellipsize="end"
+            android:gravity="start|center_vertical"
+            android:singleLine="true"
+            android:text="@{skillResumeItem.skill.name}"
+            android:textColor="@android:color/black"
+            android:textSize="@dimen/title_font"
+            android:textStyle="bold"
+            app:layout_constrainedWidth="true"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/imageSkill"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Some skill" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

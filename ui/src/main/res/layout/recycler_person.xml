@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="personResumeItem"
+            type="com.nihilus13.uimodels.PersonResumeItem" />
+
+        <variable
+            name="transformation"
+            type="com.nihilus13.imageloader.TransformationType" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:foreground="?android:attr/selectableItemBackground"
+        android:padding="@dimen/margin_medium">
+
+        <ImageView
+            android:id="@+id/imagePerson"
+            android:layout_width="@dimen/image_medium"
+            android:layout_height="@dimen/image_medium"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            app:image="@{personResumeItem.person.imageUrl}"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:transformation="@{transformation}"
+            tools:src="@drawable/ic_call_white_24dp" />
+
+        <TextView
+            android:id="@+id/textPhoneNumber"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="@dimen/margin_small"
+            android:ellipsize="end"
+            android:gravity="start|center_vertical"
+            android:singleLine="true"
+            android:text="@{personResumeItem.person.fullName}"
+            android:textColor="@android:color/black"
+            android:textSize="@dimen/header_font"
+            android:textStyle="bold"
+            app:layout_constrainedWidth="true"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/imagePerson"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Hugo Boss" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
