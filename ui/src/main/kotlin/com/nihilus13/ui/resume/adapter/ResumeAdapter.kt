@@ -1,19 +1,22 @@
 package com.nihilus13.ui.resume.adapter
 
 import android.view.ViewGroup
+import androidx.databinding.ViewDataBinding
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
-import com.nihilus13.resume.R
 import com.nihilus13.ui.common.binders.ViewHolderBinder
 import com.nihilus13.ui.common.holders.AbstractViewHolder
-import com.nihilus13.uimodels.*
+import com.nihilus13.uimodels.ResumeItem
 
-class ResumeAdapter(private val setViewHolderBinders: Set<ViewHolderBinder<out AbstractViewHolder, *>>) :
-    RecyclerView.Adapter<AbstractViewHolder>() {
+class ResumeAdapter(private val setViewHolderBinders: Set<ViewHolderBinder<out AbstractViewHolder<ResumeItem>, ResumeItem, out ViewDataBinding>>) :
+    RecyclerView.Adapter<AbstractViewHolder<ResumeItem>>() {
 
     var listCombined: MutableList<ResumeItem> = mutableListOf()
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): AbstractViewHolder =
+    override fun onCreateViewHolder(
+        parent: ViewGroup,
+        viewType: Int
+    ): AbstractViewHolder<ResumeItem> =
         setViewHolderBinders
             .first {
                 it.getViewHolderType() == viewType
@@ -22,17 +25,12 @@ class ResumeAdapter(private val setViewHolderBinders: Set<ViewHolderBinder<out A
 
     override fun getItemCount(): Int = listCombined.size
 
-    override fun getItemViewType(position: Int): Int =
-        when (listCombined[position]) {
-            is SectionResumeItem -> R.layout.recycler_section
-            is PersonResumeItem -> R.layout.recycler_person
-            is ContactResumeItem -> R.layout.recycler_contact
-            is JobExperienceResumeItem -> R.layout.recycler_job_experience
-            is EducationResumeItem -> R.layout.recycler_education
-            else -> R.layout.recycler_skill
-        }
+    override fun getItemViewType(position: Int) =
+        setViewHolderBinders
+            .first { it.isInstanceOfBinder(listCombined[position]) }
+            .getViewHolderType()
 
-    override fun onBindViewHolder(holder: AbstractViewHolder, position: Int) =
+    override fun onBindViewHolder(holder: AbstractViewHolder<ResumeItem>, position: Int) =
         holder.bindViewHolder(listCombined[position])
 
     fun setResumeList(list: List<ResumeItem>) =
@@ -42,4 +40,5 @@ class ResumeAdapter(private val setViewHolderBinders: Set<ViewHolderBinder<out A
             addAll(list)
             notifyDataSetChanged()
         }
+
 }

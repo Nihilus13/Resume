@@ -5,7 +5,6 @@ import com.nihilus13.resume.R
 import com.nihilus13.resume.databinding.RecyclerJobExperienceBinding
 import com.nihilus13.ui.common.holders.AbstractViewHolder
 import com.nihilus13.uimodels.JobExperienceResumeItem
-import com.nihilus13.uimodels.ResumeItem
 
 class JobExperienceViewHolder(
     private val binding: RecyclerJobExperienceBinding,
@@ -15,11 +14,10 @@ class JobExperienceViewHolder(
         )
     )
 ) :
-    AbstractViewHolder(binding.root) {
+    AbstractViewHolder<JobExperienceResumeItem>(binding.root) {
 
-    override fun bindViewHolder(item: ResumeItem) =
+    override fun bindViewHolder(item: JobExperienceResumeItem) =
         with(binding) {
-            item as JobExperienceResumeItem
             jobExperienceResumeItem = item
             transformation = transformationType
         }

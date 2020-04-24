@@ -5,7 +5,6 @@ import com.nihilus13.resume.R
 import com.nihilus13.resume.databinding.RecyclerPersonBinding
 import com.nihilus13.ui.common.holders.AbstractViewHolder
 import com.nihilus13.uimodels.PersonResumeItem
-import com.nihilus13.uimodels.ResumeItem
 
 class PersonViewHolder(
     private val binding: RecyclerPersonBinding,
@@ -15,11 +14,10 @@ class PersonViewHolder(
         )
     )
 ) :
-    AbstractViewHolder(binding.root) {
+    AbstractViewHolder<PersonResumeItem>(binding.root) {
 
-    override fun bindViewHolder(item: ResumeItem) =
+    override fun bindViewHolder(item: PersonResumeItem) =
         with(binding) {
-            item as PersonResumeItem
             personResumeItem = item
             transformation = transformationType
         }

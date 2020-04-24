@@ -4,7 +4,6 @@ import com.nihilus13.imageloader.TransformationType
 import com.nihilus13.resume.R
 import com.nihilus13.resume.databinding.RecyclerSkillBinding
 import com.nihilus13.ui.common.holders.AbstractViewHolder
-import com.nihilus13.uimodels.ResumeItem
 import com.nihilus13.uimodels.SkillResumeItem
 
 class SkillViewHolder(
@@ -15,11 +14,10 @@ class SkillViewHolder(
         )
     )
 ) :
-    AbstractViewHolder(binding.root) {
+    AbstractViewHolder<SkillResumeItem>(binding.root) {
 
-    override fun bindViewHolder(item: ResumeItem) =
+    override fun bindViewHolder(item: SkillResumeItem) =
         with(binding) {
-            item as SkillResumeItem
             skillResumeItem = item
             transformation = transformationType
         }

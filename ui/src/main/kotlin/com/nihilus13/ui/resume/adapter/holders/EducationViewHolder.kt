@@ -5,7 +5,6 @@ import com.nihilus13.resume.R
 import com.nihilus13.resume.databinding.RecyclerEducationBinding
 import com.nihilus13.ui.common.holders.AbstractViewHolder
 import com.nihilus13.uimodels.EducationResumeItem
-import com.nihilus13.uimodels.ResumeItem
 
 class EducationViewHolder(
     private val binding: RecyclerEducationBinding,
@@ -15,11 +14,10 @@ class EducationViewHolder(
         )
     )
 ) :
-    AbstractViewHolder(binding.root) {
+    AbstractViewHolder<EducationResumeItem>(binding.root) {
 
-    override fun bindViewHolder(item: ResumeItem) =
+    override fun bindViewHolder(item: EducationResumeItem) =
         with(binding) {
-            item as EducationResumeItem
             educationResumeItem = item
             transformation = transformationType
         }

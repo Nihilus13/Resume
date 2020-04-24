@@ -6,9 +6,13 @@ import com.nihilus13.resume.R
 import com.nihilus13.resume.databinding.RecyclerEducationBinding
 import com.nihilus13.ui.common.binders.ViewHolderBinder
 import com.nihilus13.ui.resume.adapter.holders.EducationViewHolder
+import com.nihilus13.uimodels.EducationResumeItem
+import com.nihilus13.uimodels.ResumeItem
 
 class EducationViewHolderBinder internal constructor(bindingInflater: (ViewGroup) -> RecyclerEducationBinding) :
-    ViewHolderBinder<EducationViewHolder, RecyclerEducationBinding>(bindingInflater) {
+    ViewHolderBinder<EducationViewHolder, EducationResumeItem, RecyclerEducationBinding>(
+        bindingInflater
+    ) {
 
     constructor() : this({
         RecyclerEducationBinding.inflate(
@@ -22,4 +26,7 @@ class EducationViewHolderBinder internal constructor(bindingInflater: (ViewGroup
 
     override fun createViewHolder(parent: ViewGroup): EducationViewHolder =
         EducationViewHolder(createBinding(parent))
+
+    override fun typeCheck(resumeItem: ResumeItem): Boolean = resumeItem is EducationResumeItem
+
 }

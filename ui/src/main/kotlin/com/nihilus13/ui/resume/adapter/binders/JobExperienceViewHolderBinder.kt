@@ -6,9 +6,13 @@ import com.nihilus13.resume.R
 import com.nihilus13.resume.databinding.RecyclerJobExperienceBinding
 import com.nihilus13.ui.common.binders.ViewHolderBinder
 import com.nihilus13.ui.resume.adapter.holders.JobExperienceViewHolder
+import com.nihilus13.uimodels.JobExperienceResumeItem
+import com.nihilus13.uimodels.ResumeItem
 
 class JobExperienceViewHolderBinder internal constructor(bindingInflater: (ViewGroup) -> RecyclerJobExperienceBinding) :
-    ViewHolderBinder<JobExperienceViewHolder, RecyclerJobExperienceBinding>(bindingInflater) {
+    ViewHolderBinder<JobExperienceViewHolder, JobExperienceResumeItem, RecyclerJobExperienceBinding>(
+        bindingInflater
+    ) {
 
     constructor() : this({
         RecyclerJobExperienceBinding.inflate(
@@ -22,5 +26,7 @@ class JobExperienceViewHolderBinder internal constructor(bindingInflater: (ViewG
 
     override fun createViewHolder(parent: ViewGroup): JobExperienceViewHolder =
         JobExperienceViewHolder(createBinding(parent))
+
+    override fun typeCheck(resumeItem: ResumeItem): Boolean = resumeItem is JobExperienceResumeItem
 
 }

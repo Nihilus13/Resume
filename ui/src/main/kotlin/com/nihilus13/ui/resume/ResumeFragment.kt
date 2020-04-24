@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.databinding.ViewDataBinding
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -14,10 +15,13 @@ import com.nihilus13.helper.startActivitySafely
 import com.nihilus13.resume.R
 import com.nihilus13.resume.databinding.FragmentResumeBinding
 import com.nihilus13.ui.common.binders.SectionViewHolderBinder
+import com.nihilus13.ui.common.binders.ViewHolderBinder
+import com.nihilus13.ui.common.holders.AbstractViewHolder
 import com.nihilus13.ui.resume.adapter.ResumeAdapter
 import com.nihilus13.ui.resume.adapter.binders.*
 import com.nihilus13.ui.resume.adapter.onclick.OnDataBindViewClick
 import com.nihilus13.ui.resume.adapter.onclick.OnEmptyBindViewClick
+import com.nihilus13.uimodels.ResumeItem
 
 class ResumeFragment : Fragment() {
 
@@ -39,22 +43,25 @@ class ResumeFragment : Fragment() {
         override fun onClick() = fetchResume()
     }
 
-    private val viewHolderBinders = setOf(
-        PersonViewHolderBinder(),
-        ContactViewHolderBinder(onPhoneClick, onMailClick, onLinkedInClick),
-        SectionViewHolderBinder(),
-        EducationViewHolderBinder(),
-        JobExperienceViewHolderBinder(),
-        SkillViewHolderBinder()
-    )
+    private val viewHolderBinders =
+        setOf(
+            PersonViewHolderBinder(),
+            ContactViewHolderBinder(onPhoneClick, onMailClick, onLinkedInClick),
+            SectionViewHolderBinder(),
+            EducationViewHolderBinder(),
+            JobExperienceViewHolderBinder(),
+            SkillViewHolderBinder()
+        )
 
+    @Suppress("UNCHECKED_CAST")
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         binding = FragmentResumeBinding.inflate(inflater, container, false)
-        resumeAdapter = ResumeAdapter(viewHolderBinders)
+        resumeAdapter =
+            ResumeAdapter(viewHolderBinders as Set<ViewHolderBinder<out AbstractViewHolder<ResumeItem>, ResumeItem, out ViewDataBinding>>)
 
         with(binding) {
             layoutError.onErrorClickListener = onErrorClick
