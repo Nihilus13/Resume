@@ -92,7 +92,7 @@ class ResumeFragment : Fragment() {
     }
 
     private fun fetchResume() {
-        binding.swipeRecyclerHome.isRefreshing = true
+        binding.viewState?.loading = true
         viewModel.fetchResume()
     }
 
